@@ -1,0 +1,59 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.example.casavideo" android:installLocation="auto">
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <application>
+<!--        <activity android:name=".SecondActivity" android:theme="@style/Theme.AppCompat.DayNight"/>-->
+        <activity android:name=".LowerThirdSettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".IntegrationActivity"/>
+        <activity
+            android:name=".JoinSessionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".CreateSessionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:windowSoftInputMode="stateAlwaysVisible" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:configChanges="screenSize|orientation"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MeetingActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden|keyboard"
+            android:theme="@style/ZMTheme.SubWindow"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".SettingActivity"
+            android:configChanges="screenSize|orientation"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="screenSize|orientation"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".NotificationService"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="us.zoom.VideoSDKPlaygroud.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>
